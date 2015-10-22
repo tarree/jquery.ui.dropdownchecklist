@@ -317,17 +317,16 @@
                 if (null != $.ui.dropdownchecklist.drop) {
                     hide();
                 }
+                console.log(options.dropdownAlignment);
                 if (options.dropdownAlignment === 'left') {
                     instance.dropWrapper.css({
                         top: instance.controlWrapper.offset().top + instance.controlWrapper.outerHeight() + "px",
-	                left: instance.controlWrapper.offset().left + "px"
-	            })	
+	                    left: instance.controlWrapper.offset().left + "px"
+	                })
                 } else {
                     instance.dropWrapper.css({
-                        position: 'absolute', 
-                        top: instance.controlWrapper.position().top + instance.controlWrapper.outerHeight() + "px",
-                        left: (instance.controlWrapper.position().left + instance.controlWrapper.outerWidth()) 
-                            - instance.dropWrapper.outerWidth() + "px"
+                        top: instance.controlWrapper.offset().top + instance.controlWrapper.outerHeight() + "px",
+                        left: (instance.controlWrapper.offset().left + instance.controlWrapper.outerWidth()) - instance.dropWrapper.outerWidth() + "px"
                     });
                 }
                 
