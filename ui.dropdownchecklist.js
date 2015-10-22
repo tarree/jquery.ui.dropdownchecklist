@@ -317,10 +317,20 @@
                 if (null != $.ui.dropdownchecklist.drop) {
                     hide();
                 }
-                instance.dropWrapper.css({
-                    top: instance.controlWrapper.offset().top + instance.controlWrapper.outerHeight() + "px",
-                    left: instance.controlWrapper.offset().left + "px"
-                })
+                if (options.dropdownAlignment === 'left') {
+                    instance.dropWrapper.css({
+                        top: instance.controlWrapper.offset().top + instance.controlWrapper.outerHeight() + "px",
+	                left: instance.controlWrapper.offset().left + "px"
+	            })	
+                } else {
+                    instance.dropWrapper.css({
+                        position: 'absolute', 
+                        top: instance.controlWrapper.position().top + instance.controlWrapper.outerHeight() + "px",
+                        left: (instance.controlWrapper.position().left + instance.controlWrapper.outerWidth()) 
+                            - instance.dropWrapper.outerWidth() + "px"
+                    });
+                }
+                
                 instance.controlWrapper.find(".ui-dropdownchecklist").toggleClass("ui-dropdownchecklist-active");
                 instance.dropWrapper.drop = true;
                 $.ui.dropdownchecklist.drop = instance;
@@ -424,7 +434,8 @@
             firstItemChecksAll: false,
             minWidth: 50,
             defaultText: null,
-            customTextFn: null
+            customTextFn: null,
+            dropdownAlignment: 'left'
         }
     });
 
