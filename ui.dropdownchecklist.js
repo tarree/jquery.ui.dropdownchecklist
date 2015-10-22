@@ -296,7 +296,7 @@
         },
         // Shows and hides the drop container
         _toggleDropContainer: function() {
-            var self = this, dropWrapper = this.dropWrapper, controlWrapper = this.controlWrapper;
+            var self = this, options = this.options, dropWrapper = this.dropWrapper, controlWrapper = this.controlWrapper;
             // hides the last shown drop container
             var hide = function() {
                 var instance = $.ui.dropdownchecklist.drop;
