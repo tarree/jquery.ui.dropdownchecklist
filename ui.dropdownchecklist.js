@@ -330,6 +330,7 @@
                 }
                 
                 instance.controlWrapper.find(".ui-dropdownchecklist").toggleClass("ui-dropdownchecklist-active");
+		instance.dropWrapper.css('width', instance.controlWrapper.outerWidth() + 'px');
                 instance.dropWrapper.drop = true;
                 $.ui.dropdownchecklist.drop = instance;
                 $(document).bind("click", hide);
